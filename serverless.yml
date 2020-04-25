@@ -1,0 +1,18 @@
+org: scouredimage
+app: demoapp
+service: poetry
+
+provider:
+  name: aws
+  runtime: python3.6
+
+functions:
+  fortune:
+    handler: handler.fortune
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
